@@ -18,6 +18,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -43,6 +44,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	private MessageSource messageSource;
 	
 	@ExceptionHandler({ ValidacaoException.class })
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ResponseEntity<Object> handleValidacaoException(ValidacaoException ex, WebRequest request) {
 		return handleValidationInternal(ex, ex.getBindingResult(), new HttpHeaders(), 
 				HttpStatus.BAD_REQUEST, request);

@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.mini.autirizadorservice.api.openapi.CartaoControllerOpenApi;
 import br.com.mini.autirizadorservice.domain.dto.CartaoDTO;
 import br.com.mini.autirizadorservice.service.CartaoService;
 
 
 @RestController
 @RequestMapping(path = "/cartoes", produces = {MediaType.APPLICATION_JSON_VALUE})
-public class CartaoController {
+public class CartaoController implements CartaoControllerOpenApi {
 	
 	
 	@Autowired
