@@ -1,4 +1,4 @@
-# mini-autorizador-service: Aplicação para cadastrar cartões de Vale Alimentação e Vale Refeição, consultar saldo e autorizar transações.
+jdbc:h2:mem:autorizadordb# mini-autorizador-service: Aplicação para cadastrar cartões de Vale Alimentação e Vale Refeição, consultar saldo e autorizar transações.
 
  Objetivos
   - Permitir criar cartões VR/VA;
@@ -56,7 +56,7 @@ Link para acessar o banco H2:
 http://localhost:8080/h2-console
 User = sa
 Password = ""
-host = jdbc:h2:mem:testdb
+host = jdbc:h2:mem:autorizadordb
 
 ```
 

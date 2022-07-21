@@ -26,7 +26,7 @@ public class Cartao extends AbstractEntity<Integer> implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Column(name = "NUMERO", length = 16)
-	private String numero;
+	private String numeroCartao;
 	
 	@Column(name = "SENHA", length = 4)
 	private String senha;

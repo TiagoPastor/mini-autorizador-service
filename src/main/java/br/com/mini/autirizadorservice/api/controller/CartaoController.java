@@ -1,10 +1,14 @@
 package br.com.mini.autirizadorservice.api.controller;
 
+import java.math.BigDecimal;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +34,13 @@ public class CartaoController implements CartaoControllerOpenApi {
 	@ResponseStatus(HttpStatus.CREATED)
 	public CartaoDTO create(@RequestBody @Valid final CartaoDTO cartaoDTO){
 		return cartaoService.create(cartaoDTO);
+	}
+	
+	
+	@GetMapping("{numeroCartao}")
+	@ResponseStatus(HttpStatus.OK)
+	public BigDecimal getSaldoCartao(@PathVariable final String numeroCartao) {
+		return cartaoService.getSaldo(numeroCartao);
 	}
 	
 

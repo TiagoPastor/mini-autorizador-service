@@ -10,6 +10,6 @@ import br.com.mini.autirizadorservice.domain.entity.Cartao;
 @Repository
 public interface CartaoRepository extends JpaRepository<Cartao, Integer>{
 	
-	Optional<Cartao> findByNumero(String numero);
+	Optional<Cartao> findByNumeroCartao(String numero);
 
 }

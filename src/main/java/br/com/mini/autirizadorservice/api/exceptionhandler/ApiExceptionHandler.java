@@ -204,7 +204,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(EntidadeJaCadastradaException.class)
 	public ResponseEntity<?> handleEntidadeEmUso(EntidadeJaCadastradaException ex, WebRequest request) {
 		
-		HttpStatus status = HttpStatus.BAD_REQUEST;
+		HttpStatus status = HttpStatus.UNPROCESSABLE_ENTITY;
 		ProblemType problemType = ProblemType.ENTIDADE_JA_CADASTRADA;
 		String detail = ex.getMessage();
 		

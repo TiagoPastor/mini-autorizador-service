@@ -15,19 +15,19 @@ import lombok.Getter;
 @Schema(title = "Problem", description = "Entidade que representa a resposta de um problema ")
 public class ProblemOpenApi {
 	
-	@Schema(example = "400")
+	@Schema
 	private Integer status;
 	
-	@Schema(example = "2022-07-20T21:43:14.080632589")
+	@Schema
 	private LocalDateTime timestamp;
 	
-	@Schema(example = "https://mini-autorizador-service/entidade-ja-cadastrada")
+	@Schema
 	private String type;
 	
-	@Schema(example = "Entidade já cadastrada")
+	@Schema
 	private String title;
 	
-	@Schema(example = "Cartão já cadastrado")
+	@Schema
 	private String detail;
 
 }

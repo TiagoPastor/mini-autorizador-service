@@ -39,7 +39,7 @@ public class CartaoControllerIT extends BaseControllerIT {
 		void postCreateCartao(){
 			
 			Cartao cartao = new Cartao();
-			cartao.setNumero(gerarNumeroCartao());
+			cartao.setNumeroCartao(gerarNumeroCartao());
 			cartao.setSenha(gerarSenhaCartao());
 			
 			StringBuilder url = new StringBuilder(RESOURCE_BASE_URL);
@@ -59,7 +59,7 @@ public class CartaoControllerIT extends BaseControllerIT {
 		
 			Cartao cartao = criarCartao();
 			Cartao novoCartao = new Cartao();
-			novoCartao.setNumero(cartao.getNumero());
+			novoCartao.setNumeroCartao(cartao.getNumeroCartao());
 			novoCartao.setSenha(gerarSenhaCartao());
 			
 			StringBuilder url = new StringBuilder(RESOURCE_BASE_URL);
@@ -94,7 +94,7 @@ public class CartaoControllerIT extends BaseControllerIT {
 		void postCreateCartaoSemSenha(){
 		
 			Cartao novoCartao = new Cartao();
-			novoCartao.setNumero(gerarNumeroCartao());
+			novoCartao.setNumeroCartao(gerarNumeroCartao());
 			
 			StringBuilder url = new StringBuilder(RESOURCE_BASE_URL);
 			HttpEntity<Cartao> request = new HttpEntity<>(novoCartao);
@@ -113,7 +113,7 @@ public class CartaoControllerIT extends BaseControllerIT {
 	
 	private Cartao criarCartao() {
         return cartaoRepository.save(Cartao.builder()
-        .numero(gerarNumeroCartao())
+        .numeroCartao(gerarNumeroCartao())
         .senha(gerarSenhaCartao())
         .status(StatusEnum.ATIVO).build());
 	}

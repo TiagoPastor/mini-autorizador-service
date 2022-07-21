@@ -2,6 +2,8 @@ package br.com.mini.autirizadorservice.domain.dto;
 
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.mini.autirizadorservice.domain.enumeration.StatusEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -16,17 +18,17 @@ import lombok.Setter;
 @Schema(title = "CartaoDTO", description = "É a entidade que representa um cartão")
 public class CartaoDTO {
 	
-	@Schema(hidden = true)
+	@JsonIgnore
 	private Integer id;
 	
-	@Schema(hidden = true)
+	@JsonIgnore
 	private StatusEnum status;
 	
 	@Schema(title = "Número do cartão", 
 			description = "É a entidade que representa o número do cartão", 
 			example = "532698745132565")
 	@NotBlank
-	private String numero;
+	private String numeroCartao;
 	
 	@Schema(title = "Senha do cartão", 
 			description = "É a entidade que representa a senha do cartão", 

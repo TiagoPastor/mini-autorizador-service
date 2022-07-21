@@ -30,6 +30,9 @@ public class Problem {
 		private String name;
 		private String userMessage;
 		
+		private String senha;
+		private String numeroCartoa;
+		
 	}
 
 }

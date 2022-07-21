@@ -9,7 +9,9 @@ import lombok.Getter;
 public enum StatusEnum {
 	ATIVO((short) 1, "Ativo"), 
 	EXCLUIDO((short) 2, "Excluído"),
-	INATIVO((short) 3, "Inativo");
+	INATIVO((short) 3, "Inativo"),
+	LIBERADO((short) 4, "Liberado"), 
+	BLOQUEADO((short) 5, "Bloqueado");
 
 	private static final Map<Short, StatusEnum> LOOKUP = new HashMap<>();
 
