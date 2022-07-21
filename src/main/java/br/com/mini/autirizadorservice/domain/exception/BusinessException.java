@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.exception;
+package br.com.mini.autirizadorservice.domain.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

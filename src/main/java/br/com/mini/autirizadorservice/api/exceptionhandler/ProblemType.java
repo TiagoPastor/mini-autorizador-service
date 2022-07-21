@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.configuration.exceptionhandler;
+package br.com.mini.autirizadorservice.api.exceptionhandler;
 
 import lombok.Getter;
 

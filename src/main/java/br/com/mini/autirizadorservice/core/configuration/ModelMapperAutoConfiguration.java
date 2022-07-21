@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.configuration;
+package br.com.mini.autirizadorservice.core.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;

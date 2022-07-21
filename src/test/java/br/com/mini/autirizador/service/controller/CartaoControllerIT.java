@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 
 import br.com.mini.autirizadorservice.domain.entity.Cartao;
 import br.com.mini.autirizadorservice.domain.enumeration.StatusEnum;
-import br.com.mini.autirizadorservice.repository.CartaoRepository;
+import br.com.mini.autirizadorservice.domain.repository.CartaoRepository;
 
 
 

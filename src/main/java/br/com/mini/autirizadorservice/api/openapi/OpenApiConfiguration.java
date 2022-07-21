@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.core.documentation.openapi;
+package br.com.mini.autirizadorservice.api.openapi;
 
 import org.springframework.context.annotation.Bean;
 

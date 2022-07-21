@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.repository;
+package br.com.mini.autirizadorservice.domain.repository;
 
 import java.util.Optional;
 

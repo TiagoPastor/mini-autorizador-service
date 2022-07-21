@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.controller;
+package br.com.mini.autirizadorservice.api.controller;
 
 import javax.validation.Valid;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.mini.autirizadorservice.api.openapi.CartaoControllerOpenApi;
+import br.com.mini.autirizadorservice.api.openapi.controller.CartaoControllerOpenApi;
 import br.com.mini.autirizadorservice.domain.dto.CartaoDTO;
-import br.com.mini.autirizadorservice.service.CartaoService;
+import br.com.mini.autirizadorservice.domain.service.CartaoService;
 
 
 @RestController

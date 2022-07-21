@@ -1,7 +1,7 @@
-package br.com.mini.autirizadorservice.api.openapi;
+package br.com.mini.autirizadorservice.api.openapi.controller;
 
-import br.com.mini.autirizadorservice.core.documentation.openapi.model.CartaoDtoOpenApi;
-import br.com.mini.autirizadorservice.core.documentation.openapi.model.ProblemOpenApi;
+import br.com.mini.autirizadorservice.api.openapi.entity.CartaoDtoOpenApi;
+import br.com.mini.autirizadorservice.api.openapi.entity.ProblemOpenApi;
 import br.com.mini.autirizadorservice.domain.dto.CartaoDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.exception;
+package br.com.mini.autirizadorservice.domain.exception;
 
 public class EntidadeJaCadastradaException extends BusinessException {
 

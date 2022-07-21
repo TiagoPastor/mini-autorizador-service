@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.service;
+package br.com.mini.autirizadorservice.domain.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import br.com.mini.autirizadorservice.domain.dto.CartaoDTO;
 import br.com.mini.autirizadorservice.domain.entity.Cartao;
 import br.com.mini.autirizadorservice.domain.enumeration.StatusEnum;
-import br.com.mini.autirizadorservice.exception.EntidadeJaCadastradaException;
-import br.com.mini.autirizadorservice.repository.CartaoRepository;
+import br.com.mini.autirizadorservice.domain.exception.EntidadeJaCadastradaException;
+import br.com.mini.autirizadorservice.domain.repository.CartaoRepository;
 
 @Service
 public class CartaoService extends AbstractService{

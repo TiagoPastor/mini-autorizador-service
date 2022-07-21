@@ -32,7 +32,8 @@ Pode importar como projeto maven existente no Spring Tool Suite 4 que foi a vers
 #### Swagger
 
 ```
-http://localhost:8080/v3/api-docs
+OpenAPI: http://localhost:8080/v3/api-docs
+Swagger UI: http://localhost:8080/swagger-ui/4.11.1/index.html
 ```
 ### Arquivo de Collection Json - Usar no Postman
 

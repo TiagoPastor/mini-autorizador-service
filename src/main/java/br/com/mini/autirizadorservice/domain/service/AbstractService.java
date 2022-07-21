@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.service;
+package br.com.mini.autirizadorservice.domain.service;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.core.documentation.openapi.model;
+package br.com.mini.autirizadorservice.api.openapi.entity;
 
 import java.time.LocalDateTime;
 

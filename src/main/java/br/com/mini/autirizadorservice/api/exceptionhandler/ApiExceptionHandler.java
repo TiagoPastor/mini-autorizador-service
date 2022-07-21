@@ -1,4 +1,4 @@
-package br.com.mini.autirizadorservice.configuration.exceptionhandler;
+package br.com.mini.autirizadorservice.api.exceptionhandler;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,9 +29,9 @@ import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import com.fasterxml.jackson.databind.exc.PropertyBindingException;
 
 import br.com.mini.autirizadorservice.core.validation.ValidacaoException;
-import br.com.mini.autirizadorservice.exception.BusinessException;
-import br.com.mini.autirizadorservice.exception.EntidadeJaCadastradaException;
-import br.com.mini.autirizadorservice.exception.EntidadeNaoEncontradaException;
+import br.com.mini.autirizadorservice.domain.exception.BusinessException;
+import br.com.mini.autirizadorservice.domain.exception.EntidadeJaCadastradaException;
+import br.com.mini.autirizadorservice.domain.exception.EntidadeNaoEncontradaException;
 
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
