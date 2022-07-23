@@ -1,4 +1,4 @@
-jdbc:h2:mem:autorizadordb# mini-autorizador-service: Aplicação para cadastrar cartões de Vale Alimentação e Vale Refeição, consultar saldo e autorizar transações.
+# mini-autorizador-service: Aplicação para cadastrar cartões de Vale Alimentação e Vale Refeição, consultar saldo e autorizar transações.
 
  Objetivos
   - Permitir criar cartões VR/VA;
