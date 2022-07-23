@@ -10,7 +10,7 @@ import br.com.mini.autirizadorservice.domain.dto.SaldoDTO;
 import br.com.mini.autirizadorservice.domain.entity.Cartao;
 import br.com.mini.autirizadorservice.domain.entity.Saldo;
 import br.com.mini.autirizadorservice.domain.enumeration.StatusEnum;
-import br.com.mini.autirizadorservice.domain.exception.EntidadeNaoEncontradaException;
+import br.com.mini.autirizadorservice.domain.exception.EntityNotFound;
 import br.com.mini.autirizadorservice.domain.repository.SaldoRepository;
 
 @Service
@@ -30,12 +30,22 @@ public class SaldoService extends AbstractService{
 		
 	}
 	
+	public Optional<Saldo> consultarSaldo(final String numeroCartao, final BigDecimal valorTransacao) {
+		return saldoRepository.findBySaldoPositivo(numeroCartao, valorTransacao);
+	}
+	
+	public void atualizarSaldo(final Saldo saldo) {
+		saldoRepository.save(saldo);
+		
+	}
+	
 	
 	public SaldoDTO getSaldo(final String numeroCartao) {
 		Optional<Saldo> saldo = saldoRepository.findByNumeroCartao(numeroCartao);
-		if(saldo.isEmpty()) {
-			throw new EntidadeNaoEncontradaException("Cartão não encontrado");
-		}
+		saldo.orElseThrow(() -> {
+			throw new EntityNotFound();
+			});
+		
 		return convertToDTO(saldo.get(), SaldoDTO.class);
 		
 	}

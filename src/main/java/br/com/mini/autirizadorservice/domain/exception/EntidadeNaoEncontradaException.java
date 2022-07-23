@@ -8,4 +8,8 @@ public class EntidadeNaoEncontradaException extends BusinessException {
 		super(mensagem);
 	}
 	
+	public EntidadeNaoEncontradaException() {
+
+	}
+	
 }

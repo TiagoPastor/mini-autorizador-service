@@ -30,9 +30,5 @@ public class Cartao extends AbstractEntity<Integer> implements Serializable {
 	
 	@Column(name = "SENHA", length = 4)
 	private String senha;
-	
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_CARTAO_CLIENTE"))
-//	private Cliente cliente;
 
 }

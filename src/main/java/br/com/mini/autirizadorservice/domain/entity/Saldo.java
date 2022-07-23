@@ -28,10 +28,6 @@ public class Saldo extends AbstractEntity<Integer>{
 	@Column(name = "SALDO")
 	private BigDecimal saldo;
 	
-//	@ManyToOne
-//	@JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_SALDO_CLIENTE"))
-//	private Cliente cliente;
-	
 	@OneToOne
 	@JoinColumn(name = "ID_CARTAO", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "FK_SALDO_CARTAO"))
 	private Cartao cartao;

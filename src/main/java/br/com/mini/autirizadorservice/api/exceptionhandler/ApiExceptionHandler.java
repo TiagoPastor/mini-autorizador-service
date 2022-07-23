@@ -30,8 +30,11 @@ import com.fasterxml.jackson.databind.exc.PropertyBindingException;
 
 import br.com.mini.autirizadorservice.core.validation.ValidacaoException;
 import br.com.mini.autirizadorservice.domain.exception.BusinessException;
+import br.com.mini.autirizadorservice.domain.exception.CartaoJaCadastradoException;
 import br.com.mini.autirizadorservice.domain.exception.EntidadeJaCadastradaException;
 import br.com.mini.autirizadorservice.domain.exception.EntidadeNaoEncontradaException;
+import br.com.mini.autirizadorservice.domain.exception.EntityNotFound;
+import br.com.mini.autirizadorservice.domain.exception.UnprocessableEntityException;
 
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
@@ -199,7 +202,27 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 		Problem problem = createProblemBuilder(status, problemType, detail).build();
 		
 		return handleExceptionInternal(ex, problem, new HttpHeaders(), status, request);
+	}	
+	
+	
+	@ExceptionHandler(CartaoJaCadastradoException.class)
+	public ResponseEntity<?> handleCartaoJaCadastrado(CartaoJaCadastradoException ex){
+		
+		return ResponseEntity.unprocessableEntity().body(ex.getCartaoDTO());	
+		
 	}
+	
+	@ExceptionHandler(EntityNotFound.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public void handleEntidadeNaoEncontrada(EntityNotFound ex){	}
+	
+	
+	@ExceptionHandler(UnprocessableEntityException.class)
+	public ResponseEntity<?> handleUnprocessableEntity(UnprocessableEntityException ex){
+		
+		return ResponseEntity.unprocessableEntity().body(ex.getMessage());
+	}
+	
 	
 	@ExceptionHandler(EntidadeJaCadastradaException.class)
 	public ResponseEntity<?> handleEntidadeEmUso(EntidadeJaCadastradaException ex, WebRequest request) {
