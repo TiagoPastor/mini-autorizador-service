@@ -11,3 +11,14 @@ spring:
       path: /h2-console
   jpa:
     show-sql: true
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/autorizadordb?&serverTimezone=UTC
+#    username: postgres
+#    password: changeme
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
