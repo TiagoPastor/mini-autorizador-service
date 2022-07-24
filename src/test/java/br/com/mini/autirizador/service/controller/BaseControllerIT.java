@@ -15,7 +15,7 @@ import br.com.mini.autirizadorservice.MiniAutorizadorServiceApplication;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {MiniAutorizadorServiceApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource(locations = "/application-integrationtest.yml")
+@TestPropertySource(properties = { "spring.config.location=classpath:application-integrationtest.yml" })
 public class BaseControllerIT {
 	
 	
@@ -24,5 +24,6 @@ public class BaseControllerIT {
 	
 	@Autowired 
 	TestRestTemplate restTemplate;
+	
 
 }

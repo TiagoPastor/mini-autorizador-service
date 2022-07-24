@@ -3,6 +3,7 @@ package br.com.mini.autirizador.service.controller;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import br.com.mini.autirizadorservice.domain.entity.Cartao;
 import br.com.mini.autirizadorservice.domain.enumeration.StatusEnum;
 import br.com.mini.autirizadorservice.domain.repository.CartaoRepository;
+import br.com.mini.autirizadorservice.domain.repository.SaldoRepository;
 
 
 
@@ -27,6 +29,16 @@ public class CartaoControllerIT extends BaseControllerIT {
 	
 	@Autowired
 	private CartaoRepository cartaoRepository;
+	
+	@Autowired
+	private SaldoRepository saldoRepository;
+	
+	
+	@BeforeEach
+	public void setUp() {	
+		saldoRepository.deleteAll();
+		cartaoRepository.deleteAll();
+	}
 	
 
 	
@@ -47,7 +59,7 @@ public class CartaoControllerIT extends BaseControllerIT {
 			ResponseEntity<Cartao> response = restTemplate.exchange(url.toString(), HttpMethod.POST, request, Cartao.class);
 			
 			assertNotNull(response);
-			assertNotNull(response.getBody().getId());
+			assertNotNull(response.getBody().getNumeroCartao());
 			assertEquals(HttpStatus.CREATED, response.getStatusCode());
 
 			
@@ -67,7 +79,7 @@ public class CartaoControllerIT extends BaseControllerIT {
 			ResponseEntity<Object> response = restTemplate.exchange(url.toString(), HttpMethod.POST, request, Object.class);
 			
 			assertNotNull(response);
-			assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+			assertEquals(HttpStatus.UNPROCESSABLE_ENTITY, response.getStatusCode());
 
 			
 		}
