@@ -13,13 +13,15 @@
 * JUnit
 * OpenApi (Swagger v3)
 * H2 DataBase
+* PostgresSQL
 * Lombok
 * Docker
 
 ### Instalação
 
 ```
-
+Executar o docker-compose.yml
+comando: docker-compose up -d
 
 ```
 
