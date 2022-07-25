@@ -1,13 +1,46 @@
-version: '3.5'
+version: "3.7"
 
 services:
-  autorizador-server:
-    image: tiagopsilva/mini-autorizador
-    ports:
-      - 8080:8080
-    networks:
-      - autorizador
 
-networks:
+#  mongo:
+#    image: mongo:4.2
+#    hostname: mongo
+#    container_name: mongo
+#    ports:
+#      - 27017:27017
+#    environment:
+#      MONGO_INITDB_DATABASE: miniautorizador
+#      MONGO_INITDB_ROOT_USERNAME: user
+#      MONGO_INITDB_ROOT_PASSWORD: password
+#    volumes:
+#      - ./scripts/init.js:/docker-entrypoint-initdb.d/init.js:ro
+
+  mysql:
+    image: mysql:5.7
+    hostname: mysql
+    container_name: mysql
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: miniautorizador
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    networks:
+     - rede_autorizador
+      
   autorizador:
+    image: tiagopsilva/mini-autorizador
+    ports: 
+       - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/miniautorizador?autoReconnect=true&useSSL=false
+    depends_on:
+       - mysql
+    networks:
+       - rede_autorizador
+       
+networks:
+  rede_autorizador:
     driver: bridge
+    
