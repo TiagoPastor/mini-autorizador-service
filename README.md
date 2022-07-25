@@ -13,7 +13,7 @@
 * JUnit
 * OpenApi (Swagger v3)
 * H2 DataBase
-* PostgresSQL
+* MySQL
 * Lombok
 * Docker
 
